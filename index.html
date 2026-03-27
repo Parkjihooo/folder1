@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
+        .header { background: #1e293b; padding: 20px 32px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155; }
+        .header h1 { font-size: 1.5rem; color: #38bdf8; }
+        .header span { color: #94a3b8; font-size: 0.9rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; padding: 32px; }
+        .card { background: #1e293b; border-radius: 16px; padding: 24px; border: 1px solid #334155; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-4px); }
+        .card-title { font-size: 0.85rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .card-value { font-size: 2.2rem; font-weight: 700; }
+        .card-sub { font-size: 0.8rem; margin-top: 8px; }
+        .up { color: #4ade80; }
+        .down { color: #f87171; }
+        .chart-section { padding: 0 32px 32px; }
+        .chart-card { background: #1e293b; border-radius: 16px; padding: 24px; border: 1px solid #334155; }
+        .chart-card h2 { font-size: 1.1rem; color: #94a3b8; margin-bottom: 20px; }
+        .bar-chart { display: flex; align-items: flex-end; gap: 12px; height: 200px; padding-top: 10px; }
+        .bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .bar { width: 100%; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #38bdf8, #0284c7); min-height: 8px; transition: height 0.6s ease; }
+        .bar-label { font-size: 0.75rem; color: #64748b; }
+        .bar-value { font-size: 0.7rem; color: #94a3b8; }
+        .table-section { padding: 0 32px 32px; }
+        .table-card { background: #1e293b; border-radius: 16px; padding: 24px; border: 1px solid #334155; overflow-x: auto; }
+        .table-card h2 { font-size: 1.1rem; color: #94a3b8; margin-bottom: 16px; }
+        table { width: 100%; border-collapse: collapse; }
+        th { text-align: left; padding: 12px; color: #64748b; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #334155; }
+        td { padding: 12px; border-bottom: 1px solid #1e293b; font-size: 0.9rem; }
+        tr:hover td { background: #334155; }
+        .badge { padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+        .badge-green { background: #064e3b; color: #4ade80; }
+        .badge-yellow { background: #713f12; color: #fbbf24; }
+        .badge-red { background: #7f1d1d; color: #f87171; }
+        .footer { text-align: center; padding: 24px; color: #475569; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Sample Dashboard</h1>
+        <span id="current-date"></span>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <div class="card-title">Total Users</div>
+            <div class="card-value" style="color:#38bdf8;">12,847</div>
+            <div class="card-sub up">▲ 12.5% from last month</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Revenue</div>
+            <div class="card-value" style="color:#4ade80;">₩8,420,000</div>
+            <div class="card-sub up">▲ 8.2% from last month</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Active Sessions</div>
+            <div class="card-value" style="color:#a78bfa;">1,024</div>
+            <div class="card-sub down">▼ 3.1% from last month</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Conversion Rate</div>
+            <div class="card-value" style="color:#fbbf24;">3.42%</div>
+            <div class="card-sub up">▲ 0.8% from last month</div>
+        </div>
+    </div>
+
+    <div class="chart-section">
+        <div class="chart-card">
+            <h2>Monthly Traffic</h2>
+            <div class="bar-chart" id="barChart"></div>
+        </div>
+    </div>
+
+    <div class="table-section">
+        <div class="table-card">
+            <h2>Recent Activity</h2>
+            <table>
+                <thead>
+                    <tr><th>User</th><th>Action</th><th>Status</th><th>Date</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Kim Jiho</td><td>Purchase completed</td><td><span class="badge badge-green">Success</span></td><td>2026-03-27</td></tr>
+                    <tr><td>Lee Suna</td><td>Account created</td><td><span class="badge badge-green">Success</span></td><td>2026-03-26</td></tr>
+                    <tr><td>Park Minho</td><td>Payment pending</td><td><span class="badge badge-yellow">Pending</span></td><td>2026-03-26</td></tr>
+                    <tr><td>Choi Yuna</td><td>Refund requested</td><td><span class="badge badge-red">Alert</span></td><td>2026-03-25</td></tr>
+                    <tr><td>Jung Daeho</td><td>Subscription renewed</td><td><span class="badge badge-green">Success</span></td><td>2026-03-25</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer">Powered by GitHub Pages</div>
+
+    <script>
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('ko-KR', { year:'numeric', month:'long', day:'numeric', weekday:'long' });
+
+        const data = [
+            { label: 'Oct', value: 65 },
+            { label: 'Nov', value: 80 },
+            { label: 'Dec', value: 55 },
+            { label: 'Jan', value: 90 },
+            { label: 'Feb', value: 75 },
+            { label: 'Mar', value: 95 },
+        ];
+        const max = Math.max(...data.map(d => d.value));
+        const chart = document.getElementById('barChart');
+        data.forEach(d => {
+            const g = document.createElement('div');
+            g.className = 'bar-group';
+            const h = (d.value / max) * 180;
+            g.innerHTML = `<div class="bar-value">${d.value}k</div><div class="bar" style="height:${h}px"></div><div class="bar-label">${d.label}</div>`;
+            chart.appendChild(g);
+        });
+    </script>
+</body>
+</html>
