@@ -9,25 +9,25 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --primary: #6C5CE7;
-            --primary-light: #A29BFE;
-            --primary-dark: #5A4BD1;
-            --accent: #00CEC9;
-            --accent2: #FD79A8;
-            --accent3: #FDCB6E;
-            --bg-dark: #0B0E1A;
-            --bg-card: #141829;
-            --bg-card2: #1A1F35;
-            --border: #2D325A;
-            --text: #E8E8F0;
-            --text-dim: #8B8FAD;
-            --success: #00B894;
-            --warning: #FDCB6E;
-            --danger: #FF7675;
-            --gradient1: linear-gradient(135deg, #6C5CE7, #A29BFE);
-            --gradient2: linear-gradient(135deg, #00CEC9, #55EFC4);
-            --gradient3: linear-gradient(135deg, #FD79A8, #FDCB6E);
-            --gradient4: linear-gradient(135deg, #0984E3, #6C5CE7);
+            --primary: #2563EB;
+            --primary-light: #3B82F6;
+            --primary-dark: #1D4ED8;
+            --accent: #0EA5E9;
+            --accent2: #6366F1;
+            --accent3: #F59E0B;
+            --bg-dark: #FFFFFF;
+            --bg-card: #F8FAFC;
+            --bg-card2: #F1F5F9;
+            --border: #E2E8F0;
+            --text: #1E293B;
+            --text-dim: #64748B;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --gradient1: linear-gradient(135deg, #2563EB, #3B82F6);
+            --gradient2: linear-gradient(135deg, #0EA5E9, #38BDF8);
+            --gradient3: linear-gradient(135deg, #6366F1, #818CF8);
+            --gradient4: linear-gradient(135deg, #0284C7, #2563EB);
         }
 
         body {
@@ -40,9 +40,10 @@
 
         /* ===== HEADER ===== */
         .header {
-            background: rgba(20, 24, 41, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
             padding: 0 32px;
             position: sticky;
             top: 0;
@@ -66,6 +67,7 @@
             border-radius: 10px;
             display: flex; align-items: center; justify-content: center;
             font-size: 1.1rem;
+            color: #fff;
         }
         .logo span { background: var(--gradient1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
@@ -76,7 +78,7 @@
             font-family: inherit; font-size: 0.85rem; font-weight: 500;
             transition: all 0.2s;
         }
-        .nav-btn:hover { color: var(--text); background: rgba(108,92,231,0.1); }
+        .nav-btn:hover { color: var(--text); background: rgba(37,99,235,0.08); }
         .nav-btn.active { color: #fff; background: var(--primary); }
 
         .header-right { display: flex; align-items: center; gap: 12px; }
@@ -86,7 +88,7 @@
             padding: 6px 14px; border-radius: 20px; font-size: 0.8rem;
         }
         .user-level {
-            background: var(--gradient3);
+            background: var(--gradient1);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             font-weight: 700;
         }
@@ -106,13 +108,13 @@
         .hero::before {
             content: '';
             position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: radial-gradient(circle at 50% 50%, rgba(108,92,231,0.08) 0%, transparent 50%);
+            background: radial-gradient(circle at 50% 50%, rgba(37,99,235,0.06) 0%, transparent 50%);
             pointer-events: none;
         }
         .hero-tag {
             display: inline-flex; align-items: center; gap: 6px;
-            background: rgba(108,92,231,0.15); border: 1px solid rgba(108,92,231,0.3);
-            padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; color: var(--primary-light);
+            background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.2);
+            padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; color: var(--primary);
             margin-bottom: 20px;
         }
         .hero h1 {
@@ -140,7 +142,7 @@
             position: relative;
             overflow: hidden;
         }
-        .hero-card:hover { transform: translateY(-4px); border-color: var(--primary); }
+        .hero-card:hover { transform: translateY(-4px); border-color: var(--primary); box-shadow: 0 8px 25px rgba(37,99,235,0.1); }
         .hero-card::before {
             content: '';
             position: absolute; top: 0; left: 0; right: 0; height: 3px;
@@ -157,10 +159,10 @@
             font-size: 1.4rem;
             margin-bottom: 16px;
         }
-        .hero-card:nth-child(1) .hero-card-icon { background: rgba(108,92,231,0.15); }
-        .hero-card:nth-child(2) .hero-card-icon { background: rgba(0,206,201,0.15); }
-        .hero-card:nth-child(3) .hero-card-icon { background: rgba(253,121,168,0.15); }
-        .hero-card:nth-child(4) .hero-card-icon { background: rgba(9,132,227,0.15); }
+        .hero-card:nth-child(1) .hero-card-icon { background: rgba(37,99,235,0.1); }
+        .hero-card:nth-child(2) .hero-card-icon { background: rgba(14,165,233,0.1); }
+        .hero-card:nth-child(3) .hero-card-icon { background: rgba(99,102,241,0.1); }
+        .hero-card:nth-child(4) .hero-card-icon { background: rgba(2,132,199,0.1); }
 
         .hero-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
         .hero-card p { color: var(--text-dim); font-size: 0.82rem; line-height: 1.6; margin: 0; max-width: none; }
@@ -192,10 +194,10 @@
             font-size: 0.75rem; font-weight: 800;
             margin-bottom: 12px;
         }
-        .principle-item:nth-child(1) .principle-num { background: rgba(108,92,231,0.2); color: var(--primary-light); }
-        .principle-item:nth-child(2) .principle-num { background: rgba(0,206,201,0.2); color: var(--accent); }
-        .principle-item:nth-child(3) .principle-num { background: rgba(253,203,110,0.2); color: var(--accent3); }
-        .principle-item:nth-child(4) .principle-num { background: rgba(253,121,168,0.2); color: var(--accent2); }
+        .principle-item:nth-child(1) .principle-num { background: rgba(37,99,235,0.1); color: var(--primary); }
+        .principle-item:nth-child(2) .principle-num { background: rgba(14,165,233,0.1); color: var(--accent); }
+        .principle-item:nth-child(3) .principle-num { background: rgba(245,158,11,0.1); color: var(--accent3); }
+        .principle-item:nth-child(4) .principle-num { background: rgba(99,102,241,0.1); color: var(--accent2); }
         .principle-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
         .principle-item p { font-size: 0.8rem; color: var(--text-dim); line-height: 1.6; }
 
@@ -209,7 +211,7 @@
         }
         .battle-header-icon {
             width: 48px; height: 48px; border-radius: 14px;
-            background: rgba(108,92,231,0.15);
+            background: rgba(37,99,235,0.1);
             display: flex; align-items: center; justify-content: center;
             font-size: 1.4rem;
         }
@@ -293,7 +295,7 @@
             cursor: pointer; transition: all 0.2s;
             margin-top: 12px;
         }
-        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(108,92,231,0.4); }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(37,99,235,0.3); }
         .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
 
         .btn-secondary {
@@ -448,10 +450,10 @@
             font-size: 0.88rem;
             display: flex; align-items: center; gap: 10px;
         }
-        .quiz-option:hover { border-color: var(--primary-light); background: rgba(108,92,231,0.05); }
-        .quiz-option.selected { border-color: var(--primary); background: rgba(108,92,231,0.1); }
-        .quiz-option.correct { border-color: var(--success); background: rgba(0,184,148,0.1); }
-        .quiz-option.wrong { border-color: var(--danger); background: rgba(255,118,117,0.1); }
+        .quiz-option:hover { border-color: var(--primary-light); background: rgba(37,99,235,0.04); }
+        .quiz-option.selected { border-color: var(--primary); background: rgba(37,99,235,0.06); }
+        .quiz-option.correct { border-color: var(--success); background: rgba(16,185,129,0.08); }
+        .quiz-option.wrong { border-color: var(--danger); background: rgba(239,68,68,0.08); }
         .quiz-option-num {
             width: 26px; height: 26px; border-radius: 7px;
             background: var(--bg-card);
@@ -481,8 +483,8 @@
         }
         .quiz-explanation.visible { display: block; animation: fadeIn 0.4s ease; }
         .explanation-box {
-            background: rgba(108,92,231,0.08);
-            border: 1px solid rgba(108,92,231,0.2);
+            background: rgba(37,99,235,0.05);
+            border: 1px solid rgba(37,99,235,0.15);
             border-radius: 12px;
             padding: 20px;
         }
@@ -494,8 +496,8 @@
             font-size: 0.85rem; color: var(--text-dim); line-height: 1.7;
         }
         .tip-box {
-            background: rgba(253,203,110,0.08);
-            border: 1px solid rgba(253,203,110,0.2);
+            background: rgba(245,158,11,0.06);
+            border: 1px solid rgba(245,158,11,0.15);
             border-radius: 12px;
             padding: 20px;
             margin-top: 12px;
@@ -525,7 +527,7 @@
             position: relative;
             overflow: hidden;
         }
-        .arena-mode:hover { transform: translateY(-3px); border-color: var(--primary); }
+        .arena-mode:hover { transform: translateY(-3px); border-color: var(--primary); box-shadow: 0 8px 25px rgba(37,99,235,0.08); }
         .arena-mode::after {
             content: '';
             position: absolute; top: 0; right: 0;
@@ -543,8 +545,8 @@
             padding: 4px 10px; border-radius: 6px;
             margin-bottom: 14px;
         }
-        .arena-mode:first-child .mode-tag { background: rgba(108,92,231,0.2); color: var(--primary-light); }
-        .arena-mode:last-child .mode-tag { background: rgba(0,206,201,0.2); color: var(--accent); }
+        .arena-mode:first-child .mode-tag { background: rgba(37,99,235,0.1); color: var(--primary); }
+        .arena-mode:last-child .mode-tag { background: rgba(14,165,233,0.1); color: var(--accent); }
         .arena-mode h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 6px; }
         .arena-mode .mode-sub { font-size: 0.78rem; color: var(--text-dim); margin-bottom: 14px; }
         .arena-mode .mode-desc { font-size: 0.83rem; color: var(--text-dim); line-height: 1.6; }
@@ -602,9 +604,9 @@
             font-size: 0.85rem; font-weight: 800;
             background: var(--bg-card2);
         }
-        .ranking-item:nth-child(1) .rank-num { background: rgba(253,203,110,0.2); color: var(--accent3); }
-        .ranking-item:nth-child(2) .rank-num { background: rgba(162,155,254,0.2); color: var(--primary-light); }
-        .ranking-item:nth-child(3) .rank-num { background: rgba(0,206,201,0.2); color: var(--accent); }
+        .ranking-item:nth-child(1) .rank-num { background: rgba(245,158,11,0.12); color: #D97706; }
+        .ranking-item:nth-child(2) .rank-num { background: rgba(37,99,235,0.1); color: var(--primary); }
+        .ranking-item:nth-child(3) .rank-num { background: rgba(14,165,233,0.1); color: var(--accent); }
         .rank-avatar {
             width: 36px; height: 36px; border-radius: 50%;
             background: var(--gradient1);
@@ -639,12 +641,12 @@
         }
         .badge-card:hover { transform: translateY(-3px); }
         .badge-card.locked { opacity: 0.45; }
-        .badge-card.earned { border-color: var(--accent3); }
+        .badge-card.earned { border-color: var(--primary-light); }
         .badge-card.earned::after {
             content: '';
             position: absolute; top: 0; left: 0; right: 0; bottom: 0;
             border-radius: 14px;
-            background: radial-gradient(circle at 50% 0%, rgba(253,203,110,0.08), transparent 70%);
+            background: radial-gradient(circle at 50% 0%, rgba(37,99,235,0.05), transparent 70%);
             pointer-events: none;
         }
         .badge-icon {
@@ -654,7 +656,7 @@
             font-size: 1.8rem;
             margin: 0 auto 14px;
         }
-        .badge-card.earned .badge-icon { background: rgba(253,203,110,0.12); }
+        .badge-card.earned .badge-icon { background: rgba(37,99,235,0.08); }
         .badge-card.locked .badge-icon { background: var(--bg-card2); }
         .badge-name { font-size: 0.88rem; font-weight: 700; margin-bottom: 4px; }
         .badge-desc { font-size: 0.73rem; color: var(--text-dim); line-height: 1.5; font-style: italic; }
@@ -706,8 +708,8 @@
             border: 2px solid var(--border);
         }
         .set-badge-mini.earned {
-            border-color: var(--accent3);
-            background: rgba(253,203,110,0.1);
+            border-color: var(--primary-light);
+            background: rgba(37,99,235,0.06);
         }
         .set-info { flex: 1; }
         .set-name { font-size: 0.88rem; font-weight: 600; margin-bottom: 2px; }
@@ -764,8 +766,8 @@
         }
 
         .highlight-box {
-            background: rgba(108,92,231,0.08);
-            border: 1px solid rgba(108,92,231,0.2);
+            background: rgba(37,99,235,0.04);
+            border: 1px solid rgba(37,99,235,0.12);
             border-radius: 12px;
             padding: 20px;
             margin-top: 16px;
@@ -813,7 +815,7 @@
             .mobile-nav {
                 display: flex !important;
                 position: fixed; bottom: 0; left: 0; right: 0;
-                background: rgba(20,24,41,0.98);
+                background: rgba(255,255,255,0.98);
                 backdrop-filter: blur(20px);
                 border-top: 1px solid var(--border);
                 padding: 8px 12px;
@@ -846,7 +848,7 @@
         }
         .typing-indicator span {
             width: 6px; height: 6px; border-radius: 50%;
-            background: var(--primary-light);
+            background: var(--primary);
             animation: typing 1.4s infinite;
         }
         .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
@@ -857,8 +859,8 @@
         }
 
         /* Glow effects */
-        .glow-purple { box-shadow: 0 0 30px rgba(108,92,231,0.15); }
-        .glow-teal { box-shadow: 0 0 30px rgba(0,206,201,0.15); }
+        .glow-purple { box-shadow: 0 0 30px rgba(37,99,235,0.1); }
+        .glow-teal { box-shadow: 0 0 30px rgba(14,165,233,0.1); }
     </style>
 </head>
 <body>
@@ -1073,7 +1075,7 @@
 <div id="page-quiz" class="page">
     <div class="quiz-container">
         <div class="battle-header">
-            <div class="battle-header-icon" style="background:rgba(0,206,201,0.15);">🧩</div>
+            <div class="battle-header-icon" style="background:rgba(14,165,233,0.1);">🧩</div>
             <div>
                 <h2>개념어 스무고개 퀴즈</h2>
                 <p>문학 개념어를 상황과 예시 속에서 찾아내는 능력을 길러보세요!</p>
@@ -1156,7 +1158,7 @@
                     &nbsp;&nbsp;예: 헤어져서 슬퍼 죽겠는데 "나 하나도 안 슬퍼, 정말 행복해"라고 말하는 상황.</p>
                 </div>
 
-                <div class="tip-box" style="background:rgba(253,121,168,0.08);border-color:rgba(253,121,168,0.2);margin-top:12px;">
+                <div class="tip-box" style="background:rgba(99,102,241,0.05);border-color:rgba(99,102,241,0.15);margin-top:12px;">
                     <h4 style="color:var(--accent2);">⚠️ 한 단계 더! (함정 주의보)</h4>
                     <p>시험에서는 이렇게 물어볼 수 있어요.<br><br>
                     <strong>선지:</strong> "의문의 형식을 활용하여 화자의 정서를 부각하고 있다."<br><br>
@@ -1175,7 +1177,7 @@
 <div id="page-arena" class="page">
     <div class="arena-container">
         <div class="battle-header">
-            <div class="battle-header-icon" style="background:rgba(253,121,168,0.15);">🏆</div>
+            <div class="battle-header-icon" style="background:rgba(99,102,241,0.1);">🏆</div>
             <div>
                 <h2>카리 국어 대전</h2>
                 <p>실시간 경쟁과 팀워크로 학습 동기를 극대화합니다!</p>
@@ -1277,7 +1279,7 @@
 <div id="page-master" class="page">
     <div class="master-container">
         <div class="battle-header">
-            <div class="battle-header-icon" style="background:rgba(253,203,110,0.15);">🎖️</div>
+            <div class="battle-header-icon" style="background:rgba(37,99,235,0.1);">🎖️</div>
             <div>
                 <h2>카리 국어 마스터</h2>
                 <p>뱃지를 수집하고 컬렉션을 완성해 보세요!</p>
@@ -1379,7 +1381,7 @@
 <div id="page-guide" class="page">
     <div class="guide-container">
         <div class="battle-header">
-            <div class="battle-header-icon" style="background:rgba(9,132,227,0.15);">📖</div>
+            <div class="battle-header-icon" style="background:rgba(2,132,199,0.1);">📖</div>
             <div>
                 <h2>국어 학습법 가이드</h2>
                 <p>국어와 수학의 차이를 이해하고, 영역별 실전 공략법을 익혀보세요.</p>
